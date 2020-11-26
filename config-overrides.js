@@ -4,7 +4,9 @@ module.exports = function override(config) {
   alias({
     '@store': 'src/store',
     '@component': 'src/component',
-    '@cabinet': 'src/component/Cabinet/'
+    '@platform': 'src/platform',
+    '@aside': 'src/component/Aside',
+    '@main': 'src/component/Main'
   })(config)
 
   return config

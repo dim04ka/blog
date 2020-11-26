@@ -1,10 +1,12 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
-import StartPage from '@cabinet/StartPage'; //eslint-disable-line
+import AsideContainer from '@aside'; //eslint-disable-line
+import MainContainer from '@main'; //eslint-disable-line
 
 const App = () => (
   <Box>
-    <StartPage />
+    <AsideContainer />
+    <MainContainer />
   </Box>
 );
 
