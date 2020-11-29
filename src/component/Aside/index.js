@@ -1,3 +1,3 @@
-import AsideContainer from './AsideContainer';
+import AsideContainer from './components/AsideContainer';
 
 export default AsideContainer;
