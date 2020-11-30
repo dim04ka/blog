@@ -1,6 +1,7 @@
 import React from 'react';
 import { List } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useStyles } from '@component/Blog/styles'; //eslint-disable-line
 
 const links = [
   { name: 'JavaScript', to: '/blog/js' },
@@ -10,17 +11,17 @@ const links = [
 ];
 
 const BlogCategory = () => {
-  console.log('');
+  const classes = useStyles();
   return (
     <div>
       BlogCategory
       <List>
         {
           links.map(({ name, to }) => (
-            <li key={name}>
-              <Link to={to} style={{ color: 'black' }}>
+            <li key={name} className={classes.li}>
+              <NavLink to={to} activeClassName="selected" style={{ color: 'black' }}>
                 {name}
-              </Link>
+              </NavLink>
             </li>
           ))
         }

@@ -1,24 +1,25 @@
 import React from 'react';
 import { List } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
+import { useStyles } from '@component/Aside/styles'; //eslint-disable-line
 
 const links = [
-  { name: 'Главная', to: '/' },
   { name: 'Блог', to: '/blog' },
   { name: 'Обо мне', to: '/about' },
   { name: 'Контакты', to: '/contact' }
 ];
 
 const AsideMenu = () => {
+  const classes = useStyles();
   console.log('');
   return (
     <List>
       {
         links.map(({ name, to }) => (
-          <li key={name}>
-            <Link to={to} style={{ color: 'black' }}>
+          <li key={name} className={classes.li}>
+            <NavLink to={to} activeClassName="selected" style={{ color: 'black' }}>
               {name}
-            </Link>
+            </NavLink>
           </li>
         ))
       }
@@ -27,4 +28,4 @@ const AsideMenu = () => {
   );
 };
 
-export default AsideMenu;
+export default withRouter(AsideMenu);

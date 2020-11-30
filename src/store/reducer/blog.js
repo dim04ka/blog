@@ -1,6 +1,18 @@
 const initialState = {
   list: [
-    { id: 1, title: 'Новости JS', category: 'js', discription: 'Полное описание ноновсти с картинками и прочим' },
+    { id: 1, title: 'Новости JS', category: 'js', discription: `A paragraph with *emphasis* and **strong importance**.
+ 
+      > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+     
+    * Lists
+    * [ ] todo
+    * [x] done
+     
+    A table:
+     
+    | a | b |
+    | - | - |
+    ` },
     { id: 2, title: 'Рисуем треугольник на CSS ', category: 'css', discription: 'Полное описание ноновсти с картинками и прочим' },
     { id: 3, title: 'Жизненный цикл компонента REACT', category: 'react', discription: 'Полное описание ноновсти с картинками и прочим' },
     { id: 4, title: 'Event Loop js. Разбираем как работает', category: 'js', discription: 'Полное описание ноновсти с картинками и прочим' },

@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 
 const Post = ({ list }) => {
   const { id } = useParams();
@@ -16,7 +18,9 @@ const Post = ({ list }) => {
           postSearchById().map(({ title, discription }) => (
             <div key={title}>
               <div>{title}</div>
-              <div>{discription}</div>
+              <div>
+                <ReactMarkdown plugins={[gfm]} children={discription} />
+              </div>
             </div>
           )
           )
