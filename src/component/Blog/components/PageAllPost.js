@@ -2,7 +2,7 @@ import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const PageAllPost = ({ list }) => {
   console.log('list', list);
@@ -14,6 +14,7 @@ const PageAllPost = ({ list }) => {
           <div key={id} style={{ border: '1px solid red', marginBottom: 20 }}>
             <div>title: {title}</div>
             <div>category: {category}</div>
+            <Link to={`/blog/${category}/${id}`}>ПЕРЕЙТИ</Link>
           </div>
         ))
       }

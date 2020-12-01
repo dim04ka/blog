@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import './fonts/fonts.css';
 
 const theme = createMuiTheme({
   palette: {
@@ -8,9 +9,10 @@ const theme = createMuiTheme({
     MuiCssBaseline: {
       '@global': {
         body: {
+          fontFamily: 'Montserrat, Roboto, Arial, sans-serif'
         },
       },
-    },
+    }
   },
 });
 export default theme;

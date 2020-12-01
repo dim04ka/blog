@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from '@material-ui/core';
+import { List, Box } from '@material-ui/core';
 import { withRouter, NavLink } from 'react-router-dom';
 import { useStyles } from '@component/Aside/styles'; //eslint-disable-line
 
@@ -16,11 +16,11 @@ const AsideMenu = () => {
     <List>
       {
         links.map(({ name, to }) => (
-          <li key={name} className={classes.li}>
+          <Box component="li" pb={2} key={name} className={classes.li}>
             <NavLink to={to} activeClassName="selected" style={{ color: 'black' }}>
               {name}
             </NavLink>
-          </li>
+          </Box>
         ))
       }
 

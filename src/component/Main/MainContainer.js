@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import About from '@component/About'; //eslint-disable-line
 import Contact from '@component/Contact'; //eslint-disable-line
 import Blog from '@component/Blog'; //eslint-disable-line
@@ -19,7 +19,7 @@ const MainContainer = () => {
           <Blog />
         </Route>
         <Route>
-          <div>Error 404</div>
+          <Redirect to="/blog" />
         </Route>
       </Switch>
     </div>
