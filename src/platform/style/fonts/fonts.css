@@ -8,6 +8,11 @@
 }
 
 
+@font-face {
+  font-family: 'Abril';
+  src: local('AbrilFatface-Regular'), url('./AbrilFatface-Regular.otf') format('otf');
+}
+
 
 
 @font-face {

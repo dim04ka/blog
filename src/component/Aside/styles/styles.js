@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import BG from '@component/Aside/images/bgOnName.jpg'; //eslint-disable-line
 // import { colors } from '@styles/theme';
 
 export const useStyles = makeStyles({
@@ -50,6 +51,24 @@ export const useStyles = makeStyles({
         transform: 'scaleX(1)'
       }
     }
+  },
+  link: {
+    fontFamily: 'Abril',
+    fontSize: 74,
+    fontWeight: 'bold',
+    lineHeight: '82px',
+    backgroundImage: `url(${BG})`,
+    display: 'inline-block',
+    textAlign: 'left',
+    color: '#000000',
+    overflow: 'hidden',
+    '-webkitBackgroundClip': 'text',
+    '-webkitTextFillColor': 'transparent',
+    '-mozBackgroundClip': 'text',
+    '-mozTextFillColor': 'transparent',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center'
   }
 
 });
