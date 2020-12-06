@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -8,11 +8,16 @@ import { DEFAULT_IMAGE } from '@platform/constants'; //eslint-disable-line
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 import CommentIcon from '@material-ui/icons/Comment';
+import Aos from 'aos';
 
 const PostItem = ({ id, title, category, img, date, comment, shortDiscription }) => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   console.log('');
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} data-aos="fade-up">
       <Grid item xs={3}>
         <Box
           width="150px"
@@ -83,7 +88,7 @@ const PageAllPost = ({ list }) => {
   console.log('list', list);
   return (
     <Box px={4} py={6}>
-      <Box component={Typography} pb={2}>Показаны посты включающие все категории ({list.length})</Box>
+      <Box component={Typography} pb={2} data-aos="zoom-in">Показаны посты включающие все категории ({list.length})</Box>
       <Grid container spacing={10}>
         {
           list && list.map(el => (
