@@ -1,8 +1,15 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducer';
+import {
+  applyMiddleware,
+  compose,
+  combineReducers,
+  createStore
+} from 'redux';
+import ReduxThunk from 'redux-thunk';
+import gridsController from '@platform/controllers/grids/gridsController'; //eslint-disable-line
 
-const middlewares = [thunk];
+import reducers from './reducer';
+
+const middlewares = [ReduxThunk.withExtraArgument({ gridsController: gridsController.gridsController })];
 
 const createReduxStore = () => {
   let composeFunction;
@@ -13,11 +20,11 @@ const createReduxStore = () => {
   } else {
     composeFunction = compose;
   }
-
-  return createStore(rootReducer, composeFunction(applyMiddleware(...middlewares)));
+  return createStore(combineReducers(reducers), composeFunction(applyMiddleware(...middlewares)));
 };
 
 const store = createReduxStore();
 const { dispatch, getState } = store;
 
-export { store, dispatch, getState };
+export default store;
+export { dispatch, getState };

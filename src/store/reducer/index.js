@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import { mainReducer } from './main';
-import { blogReducer } from './blog';
 
-export default combineReducers({
-  mainReducer,
-  blogReducer,
+import { gridsReducer as grids } from '@platform/reducers/grids/gridsReducer'; //eslint-disable-line
+
+const reducers = {
   form: formReducer,
-});
+  grids,
+};
+
+export default reducers;

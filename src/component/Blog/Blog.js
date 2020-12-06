@@ -6,20 +6,17 @@ import BlogCategory from '@component/Blog/components/BlogCategory'; //eslint-dis
 import Post from '@component/Blog/components/Post'; //eslint-disable-line
 import { Switch, Route } from 'react-router-dom';
 
-const Blog = () => {
-  console.log('');
-  return (
-    <Grid container>
-      <Grid item xs={8}>
-        <Switch>
-          <Route exact path="/blog/:category" component={PageSelectedCategory} />
-          <Route exact path="/blog/:category/:id" component={Post} />
-          <Route component={PageAllPost} />
-        </Switch>
-      </Grid>
-      <Grid item xs={4}><BlogCategory /></Grid>
+const Blog = () => (
+  <Grid container>
+    <Grid item xs={8}>
+      <Switch>
+        <Route exact path="/blog/:category" component={PageSelectedCategory} />
+        <Route exact path="/blog/:category/:id" component={Post} />
+        <Route component={PageAllPost} />
+      </Switch>
     </Grid>
-  );
-};
+    <Grid item xs={4}><BlogCategory /></Grid>
+  </Grid>
+);
 
 export default Blog;

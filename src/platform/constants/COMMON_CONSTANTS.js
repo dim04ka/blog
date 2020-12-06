@@ -1,5 +1,67 @@
-const initialState = {
-  list: [
+export default {
+  // MODAL
+  MODAL_INIT: 'MODAL_INIT',
+  MODAL_CLOSE: 'MODAL_CLOSE',
+  MODAL_OPEN: 'MODAL_OPEN',
+  MODAL_DELETE: 'MODAL_DELETE',
+  MODAL_CLOSE_ALL: 'MODAL_CLOSE_ALL',
+  MODAL_CHANGE_FIELDS: 'MODAL_CHANGE_FIELDS',
+
+  MODAL_POPUP: 'MODAL_POPUP',
+
+  POPUP_INIT: 'POPUP_INIT',
+  POPUP_DELETE: 'POPUP_DELETE',
+  POPUP_DELETE_ALL: 'POPUP_DELETE_ALL',
+  POPUP_SUCCESS: 'POPUP_SUCCESS',
+  POPUP_ERROR: 'POPUP_ERROR',
+  POPUP_WARNING: 'POPUP_WARNING',
+  POPUP_CONFIRM: 'POPUP_CONFIRM',
+
+  // USER
+  SET_ACCESS_TOKEN: 'SET_ACCESS_TOKEN',
+
+  // LOADER
+  APP_LOADING: 'APP_LOADING',
+  APP_LOADED: 'APP_LOADED',
+  SHOW_LOADER: 'SHOW_LOADER',
+  HIDE_LOADER: 'HIDE_LOADER',
+  PROGRESS_LOADER: 'PROGRESS_LOADER',
+  LOADING_USER_DATA: 'LOADING_USER_DATA',
+  LOADED_USER_DATA: 'LOADED_USER_DATA',
+
+  // MENU
+  MENU_FLAG: 'MENU_FLAG',
+
+  // GRIDS
+  GRID_INIT: 'GRID_INIT',
+  GRID_LOADER: 'GRID_LOADER',
+  GRID_ERROR: 'GRID_ERROR',
+  GRID_CLOSE: 'GRID_CLOSE',
+  GRID_CLOSE_ALL: 'GRID_CLOSE_ALL',
+  GRID_CHANGE_FIELDS: 'GRID_CHANGE_FIELDS',
+  GRID_FILTER_INIT: 'GRID_FILTER_INIT',
+  GRID_FILTER_CHANGE: 'GRID_FILTER_CHANGE',
+  GRID_FILTER_REMOVE: 'GRID_FILTER_REMOVE',
+  // DEVICE
+  PLATFORM: 'PLATFORM',
+  WIDTH: 'WIDTH',
+  HEIGHT: 'HEIGHT',
+  BREAKPOINT: 'BREAKPOINT',
+  // UPLOAD FILES
+  ADD_UPLOAD_FILES: 'ADD_UPLOAD_FILES',
+  DELETE_UPLOAD_FILES: 'DELETE_UPLOAD_FILES',
+  DELETE_INPUT_UPLOAD_FILES: 'DELETE_INPUT_UPLOAD_FILES',
+  DELETE_ALL_UPLOAD_FILES: 'DELETE_ALL_UPLOAD_FILES',
+
+  // FILES
+  IMAGE_FILES: '.jpeg, .jpg, .gif, .png, .JPG, .JPEG, .PNG, .GIF',
+  DOC_IMG_FILES: '.pdf, .jpeg, .jpg, .gif, .png, .JPG, .JPEG, .PNG, .GIF, .PDF',
+
+  // URL IMAGE
+  URL_IMAGE: 'http://192.168.55.190:30687',
+  DEFAULT_IMAGE: 'https://preview.colorlib.com/theme/andrea/images/image_1.jpg',
+  GRID_POSTS: 'GRID_POSTS',
+  INITIAL_POSTS: [
     { id: 1,
       title: 'Новости JS',
       category: 'js',
@@ -12,15 +74,15 @@ const initialState = {
       img: 'https://preview.colorlib.com/theme/andrea/images/image_1.jpg',
       shortDiscription: 'Короткое описание статьи, средставленное тезисно в нескольких предложениях',
       discription: `A paragraph with *emphasis* and **strong importance**.
- 
+  
       > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-     
+      
     * Lists
     * [ ] todo
     * [x] done
-     
+      
     A table:
-     
+      
     | a | b |
     | - | - |
     ` },
@@ -70,9 +132,4 @@ const initialState = {
     { id: 27, title: 'Нfстройка redux в react прилоениях', category: 'react', discription: 'Полное описание ноновсти с картинками и прочим' },
     { id: 28, title: 'Настраиваем eslint всесте', category: 'react', discription: 'Полное описание ноновсти с картинками и прочим' },
   ]
-};
-
-export const blogReducer = (state = initialState) => {
-  console.log('');
-  return state;
 };

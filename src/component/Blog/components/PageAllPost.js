@@ -4,18 +4,18 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Box, Grid, Typography } from '@material-ui/core';
-import { DEFAULT_IMAGE } from '@platform/constants'; //eslint-disable-line
+import COMMON_CONSTANTS from '@platform/constants/COMMON_CONSTANTS'; //eslint-disable-line
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 import CommentIcon from '@material-ui/icons/Comment';
 import Aos from 'aos';
+import { initBlogItemsController, CloseBlogItemsController, getGridById } from '@component/Blog/controller'; //eslint-disable-line
 
 const PostItem = ({ id, title, category, img, date, comment, shortDiscription }) => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
 
-  console.log('');
   return (
     <Grid container spacing={3} data-aos="fade-up">
       <Grid item xs={3}>
@@ -78,20 +78,25 @@ PostItem.propTypes = {
 };
 
 PostItem.defaultProps = {
-  img: DEFAULT_IMAGE,
+  img: COMMON_CONSTANTS.DEFAULT_IMAGE,
   date: 'May 5, 2019',
   comment: null,
   shortDiscription: 'Коротное и четкое описание статьи'
 };
 
-const PageAllPost = ({ list }) => {
-  console.log('list', list);
+const PageAllPost = ({ posts, initBlogItems, CloseBlogItems }) => {
+  useEffect(() => {
+    initBlogItems();
+    return () => {
+      CloseBlogItems();
+    };
+  }, []);
   return (
     <Box px={4} py={6}>
-      <Box component={Typography} pb={2} data-aos="zoom-in">Показаны посты включающие все категории ({list.length})</Box>
+      <Box component={Typography} pb={2} data-aos="zoom-in">Показаны посты включающие все категории ({posts.length})</Box>
       <Grid container spacing={10}>
         {
-          list && list.map(el => (
+          posts.map(el => (
             <Grid item key={el.id} xs={12}>
               <PostItem {...el} />
             </Grid>
@@ -103,13 +108,22 @@ const PageAllPost = ({ list }) => {
 };
 
 PageAllPost.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.shape)
+  initBlogItems: PropTypes.func.isRequired,
+  CloseBlogItems: PropTypes.func.isRequired,
+  posts: PropTypes.shape({})
 };
 
 PageAllPost.defaultProps = {
-  list: []
+  posts: []
 };
-
 export default compose(
-  connect(state => state.blogReducer)
+  connect(state => {
+    const grid = getGridById(state);
+    return {
+      posts: grid.items
+    };
+  }, {
+    initBlogItems: initBlogItemsController,
+    CloseBlogItems: CloseBlogItemsController
+  })
 )(PageAllPost);
