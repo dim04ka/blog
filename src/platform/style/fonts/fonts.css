@@ -13,6 +13,15 @@
   src: local('AbrilFatface-Regular'), url('./AbrilFatface-Regular.otf') format('otf');
 }
 
+@font-face {
+  font-family: 'Lora';
+  src: local('Lora-Regular'), url('./Lora-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins-Regular'), url('./Poppins-Regular.ttf') format('ttf');
+}
 
 
 @font-face {

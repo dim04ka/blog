@@ -4,7 +4,6 @@ import BG from '@component/Aside/images/bgOnName.jpg'; //eslint-disable-line
 
 export const useStyles = makeStyles({
   root: {
-    border: '1px solid red',
     position: 'fixed',
     background: 'white',
     width: '25%',

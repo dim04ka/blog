@@ -6,8 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(({
   root: {
-    // height: '100vh',
-    border: '1px solid black'
+    minHeight: '100vh',
+    maxWidth: 1920,
+    margin: '0 auto',
   }
 }));
 
