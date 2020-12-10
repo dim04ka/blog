@@ -7,9 +7,9 @@ import App from '@component/App';  //eslint-disable-line
 import { Provider } from 'react-redux';
 import store from '@store/store'; //eslint-disable-line
 import { BrowserRouter } from 'react-router-dom';
-import ControllersContext from '@platform/contexts/controllers/ControllersContext'; //eslint-disable-line
 import initActions from '@platform/scripts/initActions'; //eslint-disable-line
 
+const ControllersContext = React.createContext();
 const { appControllers } = initActions();
 
 ReactDOM.render(

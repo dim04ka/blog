@@ -53,9 +53,9 @@ export const useStyles = makeStyles({
   },
   link: {
     fontFamily: 'Abril',
-    fontSize: 74,
+    fontSize: 50,
     fontWeight: 'bold',
-    lineHeight: '82px',
+    lineHeight: '55px',
     backgroundImage: `url(${BG})`,
     display: 'inline-block',
     textAlign: 'left',

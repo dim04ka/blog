@@ -85,6 +85,19 @@ PostItem.defaultProps = {
 };
 
 const PageAllPost = ({ posts, initBlogItems, CloseBlogItems }) => {
+  const Pagination = () => {
+    console.log();
+    return (
+      <Grid container spacing={2}>
+        <Grid item>
+          <Link to="#">1</Link>
+        </Grid>
+        <Grid item><Link to="#">2</Link></Grid>
+        <Grid item><Link to="#">3</Link></Grid>
+      </Grid>
+    );
+  };
+
   useEffect(() => {
     initBlogItems();
     return () => {
@@ -94,15 +107,18 @@ const PageAllPost = ({ posts, initBlogItems, CloseBlogItems }) => {
   return (
     <Box px={4} py={6}>
       <Box component={Typography} pb={2} data-aos="zoom-in">Показаны посты включающие все категории ({posts.length})</Box>
-      <Grid container spacing={10}>
-        {
-          posts.map(el => (
-            <Grid item key={el.id} xs={12}>
-              <PostItem {...el} />
-            </Grid>
-          ))
-        }
-      </Grid>
+      <Pagination />
+      <Box style={{ border: '1px solid red', overflow: 'hidden' }}>
+        <Grid container spacing={10}>
+          {
+            posts.map(el => (
+              <Grid item key={el.id} xs={12}>
+                <PostItem {...el} />
+              </Grid>
+            ))
+          }
+        </Grid>
+      </Box>
     </Box>
   );
 };
@@ -110,7 +126,7 @@ const PageAllPost = ({ posts, initBlogItems, CloseBlogItems }) => {
 PageAllPost.propTypes = {
   initBlogItems: PropTypes.func.isRequired,
   CloseBlogItems: PropTypes.func.isRequired,
-  posts: PropTypes.shape({})
+  posts: PropTypes.arrayOf(PropTypes.shape())
 };
 
 PageAllPost.defaultProps = {

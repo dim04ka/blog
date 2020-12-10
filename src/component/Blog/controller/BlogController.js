@@ -2,7 +2,7 @@ import COMMON_CONSTANTS from '@platform/constants/COMMON_CONSTANTS'; //eslint-di
 import { createSelector } from 'reselect';
 
 const initBlogItemsController = () => async (dispatch, getState, { gridsController }) => {
-  gridsController.getGrid({
+  await gridsController.getGrid({
     gridId: COMMON_CONSTANTS.GRID_POSTS,
     items: COMMON_CONSTANTS.INITIAL_POSTS
   });

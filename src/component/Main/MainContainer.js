@@ -7,7 +7,7 @@ import Blog from '@component/Blog'; //eslint-disable-line
 const MainContainer = () => {
   console.log('');
   return (
-    <div>
+    <>
       <Switch>
         <Route path="/about">
           <About />
@@ -22,7 +22,7 @@ const MainContainer = () => {
           <Redirect to="/blog" />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 };
 
